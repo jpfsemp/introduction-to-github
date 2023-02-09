@@ -23,6 +23,7 @@ jobs:
              body: issueBody
              })
       - name: Column
+        if: contains(github.event.issue.labels.*.name, 'col')
         uses: actions/github-script@0.8.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
